@@ -24,6 +24,8 @@
     height: 100vh;
     text-align: center;
     padding: 0 1rem;
+    background: linear-gradient(135deg, var(--blue-400) 0%, var(--blue-700) 100%);
+    color: var(--blue-50);
   }
 
   .logo {
@@ -32,38 +34,41 @@
     margin-bottom: 2rem;
     will-change: filter;
     transition: filter 300ms;
+    filter: drop-shadow(0 0 2em var(--blue-200));
   }
   
   .logo:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
+    filter: drop-shadow(0 0 2em var(--blue-400));
   }
 
   h1 {
     font-size: 3.2em;
     line-height: 1.1;
     margin-bottom: 1rem;
-    color: #ff3e00;
+    color: var(--blue-100);
+    text-shadow: 0 2px 8px var(--blue-700);
   }
 
   p {
     margin-bottom: 2rem;
     font-size: 1.2rem;
-    color: #888;
+    color: var(--blue-200);
     max-width: 600px;
   }
 
   .start-button {
-    background-color: #ff3e00;
-    color: white;
+    background-color: var(--blue-500);
+    color: var(--blue-50);
     border: none;
     padding: 0.8rem 1.6rem;
     font-size: 1.2rem;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 0 2px 8px var(--blue-900);
   }
 
   .start-button:hover {
-    background-color: #e63600;
+    background-color: var(--blue-700);
   }
 </style>

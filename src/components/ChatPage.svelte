@@ -64,7 +64,7 @@
 <div class="chat-container">
   <div class="chat-header">
     <h2>Chat Demo</h2>
-    <button class="back-button" on:click={() => window.location.reload()}>Back</button>
+    <button class="back-button" onclick={() => window.location.reload()}>Back</button>
   </div>
   
   <div class="messages-container">
@@ -93,11 +93,11 @@
   <div class="input-container">
     <textarea 
       bind:value={newMessage} 
-      on:keydown={handleKeyDown}
+      onkeydown={handleKeyDown}
       placeholder="Type a message..."
       rows="3"
     ></textarea>
-    <button on:click={sendMessage} disabled={isLoading || !newMessage.trim()}>
+    <button onclick={sendMessage} disabled={isLoading || !newMessage.trim()}>
       {isLoading ? 'Sending...' : 'Send'}
     </button>
   </div>
@@ -111,6 +111,10 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 1rem;
+    background: linear-gradient(135deg, var(--blue-100) 0%, var(--blue-700) 100%);
+    color: var(--blue-50);
+    border-radius: 16px;
+    box-shadow: 0 4px 32px var(--blue-900);
   }
 
   .chat-header {
@@ -123,19 +127,23 @@
 
   .chat-header h2 {
     margin: 0;
-    color: #ff3e00;
+    color: var(--blue-100);
+    text-shadow: 0 2px 8px var(--blue-700);
   }
 
   .back-button {
-    background-color: #f0f0f0;
+    background-color: var(--blue-200);
+    color: var(--blue-900);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
+    transition: background 0.3s;
   }
 
   .back-button:hover {
-    background-color: #e0e0e0;
+    background-color: var(--blue-400);
+    color: var(--blue-50);
   }
 
   .messages-container {
@@ -152,7 +160,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    color: #888;
+    color: var(--blue-200);
   }
 
   .message {
@@ -160,22 +168,23 @@
     padding: 0.8rem 1rem;
     border-radius: 8px;
     margin-bottom: 0.5rem;
+    box-shadow: 0 2px 8px var(--blue-900);
   }
 
   .user-message {
     align-self: flex-end;
-    background-color: #ff3e00;
-    color: white;
+    background-color: var(--blue-500);
+    color: var(--blue-50);
   }
 
   .ai-message {
     align-self: flex-start;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--blue-200);
+    color: var(--blue-900);
   }
 
   .error-message {
-    background-color: #ffebee;
+    background-color: #e3f0ff;
     color: #c62828;
   }
 
@@ -203,20 +212,22 @@
 
   button {
     padding: 0 1.5rem;
-    background-color: #ff3e00;
-    color: white;
+    background-color: var(--blue-500);
+    color: var(--blue-50);
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+    box-shadow: 0 2px 8px var(--blue-900);
   }
 
   button:hover:not(:disabled) {
-    background-color: #e63600;
+    background-color: var(--blue-700);
   }
 
   button:disabled {
-    background-color: #ffccbc;
+    background-color: var(--blue-100);
+    color: var(--blue-400);
     cursor: not-allowed;
   }
 
