@@ -66,6 +66,9 @@
     <h2>Chat Demo</h2>
     <button class="back-button" on:click={() => window.location.reload()}>Back</button>
   </div>
+  <div class="ai-warning-banner">
+    <p>⚠️ AI responses may be inaccurate or inappropriate. Use at your own discretion.</p>
+  </div>
   
   <div class="messages-container">
     {#if messages.length === 0}
@@ -111,6 +114,7 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 1rem;
+    background: linear-gradient(to bottom, #e0f2f7, #b3e0ff);
   }
 
   .chat-header {
@@ -118,24 +122,25 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #90caf9;
   }
 
   .chat-header h2 {
     margin: 0;
-    color: #ff3e00;
+    color: #0d47a1;
   }
 
   .back-button {
-    background-color: #f0f0f0;
+    background-color: #90caf9;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     cursor: pointer;
+    color: #0d47a1;
   }
 
   .back-button:hover {
-    background-color: #e0e0e0;
+    background-color: #64b5f6;
   }
 
   .messages-container {
@@ -164,19 +169,19 @@
 
   .user-message {
     align-self: flex-end;
-    background-color: #ff3e00;
+    background-color: #0d47a1;
     color: white;
   }
 
   .ai-message {
     align-self: flex-start;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #e3f2fd;
+    color: #0d47a1;
   }
 
   .error-message {
-    background-color: #ffebee;
-    color: #c62828;
+    background-color: #ffcdd2;
+    color: #b71c1c;
   }
 
   .message p {
@@ -194,16 +199,18 @@
   textarea {
     flex: 1;
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 1px solid #90caf9;
     border-radius: 8px;
     resize: none;
     font-family: inherit;
     font-size: 1rem;
+    background-color: #e3f2fd;
+    color: #0d47a1;
   }
 
   button {
     padding: 0 1.5rem;
-    background-color: #ff3e00;
+    background-color: #0d47a1;
     color: white;
     border: none;
     border-radius: 8px;
@@ -212,11 +219,11 @@
   }
 
   button:hover:not(:disabled) {
-    background-color: #e63600;
+    background-color: #1565c0;
   }
 
   button:disabled {
-    background-color: #ffccbc;
+    background-color: #64b5f6;
     cursor: not-allowed;
   }
 
@@ -248,4 +255,19 @@
       max-width: 90%;
     }
   }
+
+  .ai-warning-banner {
+    background-color: #fff9c4;
+    color: #5d4037;
+    border: 1px solid #fff176;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 </style>
+
+
